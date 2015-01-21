@@ -20,13 +20,12 @@ public class Stock {
     protected int retailPrice;
 
     
-    public Stock(){ 
-                        //int id, String manufacture
+    public Stock(int id, String manufacture){
 //                       String size, String color, 
 //                       String material, int retailPrice){
 //        
-//        this.ID = id;
-//        this.manufacture = manufacture;
+          this.ID = id;
+          this.manufacture = manufacture;
 //        this.color = color;
 //        this.size = size;
 //        this.materila = material;

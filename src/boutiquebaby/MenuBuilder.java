@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author xikang
  */
-public class StockMenu {
+public class MenuBuilder {
     
     // A list of chooice for customers
      protected static String menuQuestion[];
@@ -37,22 +37,27 @@ public class StockMenu {
           }
     }
     
-    protected boolean inputValidation(int responeNum, int questionNum ){
-        boolean inputValidation = false;
-        while ( inputValidation == false){
-        if(responeNum <= questionNum ){
-                  inputValidation = true;
-               }else{
-                 out.println("invalid command !Try again.");
-                 inputValidation = false;
-               }
-        }
-        return inputValidation;
-    }
     
-    public void decisionMaking(int choice){
+    
+    public static void decisionMaking(int choice, Manager manager){
         
+        switch(choice){
+                case 1: 
+                    manager.add();
+                    break;
+                case 2:
+                    manager.delete();
+                    break;
+                case 3:
+                    manager.list();
+                    break;
+                case 4:
+                    manager.search();
+                    break;
+                case 5:
+                    break;
         
+        }
     }
 }
     
