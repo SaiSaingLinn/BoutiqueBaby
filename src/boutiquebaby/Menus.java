@@ -5,7 +5,7 @@
  */
 package boutiquebaby;
 
-import java.io.DataInputStream;
+
 import static java.lang.System.out;
 import java.util.Scanner;
 
@@ -32,43 +32,37 @@ public class Menus {
        try {
            
            Scanner MenuScanner = new Scanner(System.in);
-           out.println("\t\tMain Menu");
-           out.println("\t\t---------");
-           out.println("\t\tChoose 1 to 10 for performing tasks");
-           out.println("\t\t-----------------------------------");
-           out.println("1.Stock");
-           out.println("2.Add Stock");
-           out.println("3.Add Seller");
-           out.println("4.Purchase List");
-           out.println("5.Product List");
-           out.println("6.Add Customer");
-           out.println("7.Customer List");
-           out.println("8.Add Order");
-           out.println("9.Order List");
-           out.println("10.Search by Purchase");
-           out.println("11.Search by Order");
-           out.println("12.Remove Order Item");
-           out.println("13.Remove Stock Item");
-           out.println("14.Exit Program");
-           out.println("Please Enter (1 to 14)");
-           choice = MenuScanner.nextInt();	//using method to receive data and convert string to integer
+           
+           // Array That contain answer 
+           String[] menuQuestion = new String[]{
+                   "\t\tMain Menu",
+                   "\t\t---------",
+                   "Eenter the Menu Number to chooice",
+                   "1. Stock Menu",
+                   "2. Customer Menu",
+                   "3. Purchase Menu",
+                   "4. Payment Menu",
+                   "Enter Number that you want to continue."
+           };
+           
+          this.buildMenu(menuQuestion); 
+          // Build Menu using buildMenu function
+          choice = MenuScanner.nextInt();	
+          //using method to receive data and convert string to integer
     
            switch(choice){
                case 1:
-                   
-                 MenuBuilder.menuQuestion = new String[]{
+                 // add list of questions to static array menuQuestion from StockMenu
+                menuQuestion = new String[]{
                    "1. add Stock",
                    "2. Delete Stock",
                    "3. List All Stock",
                    "4. Search Stock"
-               };// add list of questions to static array menuQuestion from StockMenu
-                 MenuBuilder.build();
-                 int choice1 = MenuScanner.nextInt();
-                 while( inputValidation(choice1, MenuBuilder.menuQuestion.length) == false){
-                     choice1 = MenuScanner.nextInt();
-                 }
+               };
+                 this.buildMenu(menuQuestion);
+                 int choice1 = this.inputValidation(menuQuestion.length);
                  StockManager stockManager= new StockManager(stocklist);
-                  MenuBuilder.decisionMaking(choice1, stockManager);
+                 this.decisionMaking(choice1, stockManager);
                  break;
                case 2:
                    break;
@@ -81,16 +75,63 @@ public class Menus {
         }
    }
    
-   protected boolean inputValidation(int responeNum, int questionNum ){
+   protected int inputValidation(int questionNum ){
+       
         boolean inputValidation = false;
-   
-        if(responeNum <= questionNum ){
-                  inputValidation = true;
+        int responeNum = 0;
+        while ( inputValidation == false){
+            Scanner MenuScanner = new Scanner(System.in);
+            responeNum = MenuScanner.nextInt();
+            
+            if(responeNum <= questionNum ){
+                
+                inputValidation = true;
+                
                }else{
+                
                  out.println("invalid command !Try again.");
                  inputValidation = false;
+                 
                }
+        }
+        return responeNum;
+    }
+   
+    public void buildMenu(String[] menuQuestion) {
         
-        return inputValidation;
+          try{
+                     for (String question : menuQuestion) {
+                        
+                         out.println(question);
+                     }
+                    
+        }catch( Exception e){
+              
+             System.out.print(e);
+          }
+          
+      
+    }
+    
+    // 
+    public void decisionMaking(int choice, Manager manager){
+        
+        switch(choice){
+                case 1: 
+                    manager.add();
+                    break;
+                case 2:
+                    manager.delete();
+                    break;
+                case 3:
+                    manager.list();
+                    break;
+                case 4:
+                    manager.search();
+                    break;
+                case 5:
+                    break;
+        
+        }
     }
 }

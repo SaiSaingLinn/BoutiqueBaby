@@ -16,7 +16,7 @@ public class Stock {
     protected String size;
     protected String color;
     protected String description;
-    protected String materila;
+    protected String material;
     protected int retailPrice;
 
     
@@ -32,24 +32,70 @@ public class Stock {
 //        this.retailPrice = retailPrice;
     }
     
-    public void setId(int id){
-        
-        this.ID = id;
+    
+
+    public void setSize(String size) {
+        this.size = size;
     }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setManufacture(String manufacture) {
+        this.manufacture = manufacture;
+    }
+
+    public void setRetailPrice(int retailPrice) {
+        this.retailPrice = retailPrice;
+    }
+    
+    
+    
+   
+    
+    
     
     public int getId(){
         
         return this.ID;
     }
     
-    public void setManufacture(String manufacture){
-        
-        this.manufacture = manufacture;
-    }
-    
     public String getManfacture(){
         
         return this.manufacture;
+    }
+    
+    public String getSize() {
+        return this.size;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public String getMaterial() {
+        return this.material;
+    }
+
+    public int getRetailPrice() {
+        return this.retailPrice;
     }
     
 }

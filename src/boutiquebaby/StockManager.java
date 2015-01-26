@@ -13,7 +13,9 @@ import java.util.Scanner;
  * @author xikang
  */
 public class StockManager implements Manager {
+    
     StockList stocklist;
+    
     public StockManager(StockList list){
         
       this.stocklist = list;
@@ -38,6 +40,8 @@ public class StockManager implements Manager {
     
     @Override
     public void delete(){
+        
+        
         
     }
     

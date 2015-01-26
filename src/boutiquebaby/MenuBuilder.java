@@ -39,7 +39,7 @@ public class MenuBuilder {
     
     
     
-    public static void decisionMaking(int choice, Manager manager){
+    public void decisionMaking(int choice, Manager manager){
         
         switch(choice){
                 case 1: 
