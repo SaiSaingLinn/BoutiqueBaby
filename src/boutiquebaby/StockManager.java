@@ -26,12 +26,12 @@ public class StockManager implements Manager {
     Scanner menuScanner  = new Scanner(System.in);
     @Override
     public void add(){
-        
+       Stock myStock = new Stock();
        out.println("Enter Stock ID");
+       myStock.setID(menuScanner.nextInt());
        int id  = menuScanner.nextInt();
        out.println("Enter Stock Manufacture");
-       String manufacture = menuScanner.next();
-       Stock myStock = new Stock(id, manufacture);
+       myStock.setManufacture(menuScanner.next());
        stocklist.add(myStock);
        
         
@@ -41,6 +41,11 @@ public class StockManager implements Manager {
     @Override
     public void delete(){
         
+        out.println("Enter the Stock ID you want to delete");
+        int num = menuScanner.nextInt();
+        stocklist.deletById(num);
+        out.println("Successfully Deleted");
+        pressEnterContinue();
         
         
     }
@@ -50,9 +55,16 @@ public class StockManager implements Manager {
         
         for(int i = 0;i < stocklist.getSize(); i++){
             
+            out.println("---------");
             Stock stock = stocklist.getById(i);
-            out.println(stock.ID);
-            out.println(stock.manufacture);
+            out.println("ID:" + stock.getId() );
+            out.println("Manufacture:" + stock.getManfacture());
+            out.println("Size:" + stock.getSize());
+            out.println("Color:" + stock.getColor());
+            out.println("Description:" + stock.getDescription());
+            out.println("Meterial:" + stock.getMaterial());
+            out.println("Retail Price:" + stock.getRetailPrice());
+            out.println();
         }
         
         pressEnterContinue();
@@ -66,6 +78,7 @@ public class StockManager implements Manager {
         out.println(stock.getManfacture());
         pressEnterContinue();
        
+        
     }
     
     // helper method for termination of process

@@ -20,11 +20,11 @@ public class Menus {
        int choice = 0;
        
        StockList stocklist = new StockList();
-       Stock stock1 = new Stock(1, "Min");
+       Stock stock1 = new Stock(1, "Opanet", "XXL", "RED", "Wearble", "Durable", 123);
        stocklist.add(stock1);
-       Stock stock2 = new Stock(2, "Min");
+       Stock stock2 = new Stock(1, "Opanet", "XXL", "RED", "Wearble", "Durable", 123);
        stocklist.add(stock2);
-       Stock stock3 = new Stock(3, "Min");
+       Stock stock3 = new Stock(1, "Opanet", "XXL", "RED", "Wearble", "Durable", 123);
        stocklist.add(stock3);
        out.println(stocklist.getById(1).getManfacture());
        
@@ -60,7 +60,7 @@ public class Menus {
                    "4. Search Stock"
                };
                 StockManager stockManager= new StockManager(stocklist);
-                this.automate(stockManager,menuQuestion);
+                this.make(stockManager,menuQuestion);
                 
                
                  break;
@@ -74,13 +74,14 @@ public class Menus {
        }
         }
    }
-   protected void automate(Manager manager, String[] question){
+   protected void make(Manager manager, String[] question){
        
        this.buildMenu(question);
        int choice1 = this.inputValidation(question.length);
        this.decisionMaking(choice1, manager);
        
    }
+   
    protected int inputValidation(int questionNum ){
        
         boolean inputValidation = false;
