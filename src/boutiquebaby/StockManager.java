@@ -66,7 +66,6 @@ public class StockManager implements Manager {
         out.println(stock.getManfacture());
         pressEnterContinue();
        
-        
     }
     
     // helper method for termination of process

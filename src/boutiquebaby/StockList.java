@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author xikang
  */
-public class StockList {
+public class StockList implements List {
     
     protected ArrayList<Stock> stockList;
     

@@ -59,10 +59,10 @@ public class Menus {
                    "3. List All Stock",
                    "4. Search Stock"
                };
-                 this.buildMenu(menuQuestion);
-                 int choice1 = this.inputValidation(menuQuestion.length);
-                 StockManager stockManager= new StockManager(stocklist);
-                 this.decisionMaking(choice1, stockManager);
+                StockManager stockManager= new StockManager(stocklist);
+                this.automate(stockManager,menuQuestion);
+                
+               
                  break;
                case 2:
                    break;
@@ -74,7 +74,13 @@ public class Menus {
        }
         }
    }
-   
+   protected void automate(Manager manager, String[] question){
+       
+       this.buildMenu(question);
+       int choice1 = this.inputValidation(question.length);
+       this.decisionMaking(choice1, manager);
+       
+   }
    protected int inputValidation(int questionNum ){
        
         boolean inputValidation = false;
