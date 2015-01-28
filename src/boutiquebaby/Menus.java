@@ -27,6 +27,14 @@ public class Menus {
        Stock stock3 = new Stock(1, "Opanet", "XXL", "RED", "Wearble", "Durable", 123);
        stocklist.add(stock3);
        out.println(stocklist.getById(1).getManfacture());
+       OrderList orderlist = new OrderList();
+       Order order1 = new Order(1, 2, "Min San", "12.3.2014");
+       orderlist.add(order1);
+       Order order2 = new Order(1, 2, "Min San", "12.3.2014");
+       orderlist.add(order2);
+       Order order3 = new Order(1, 2, "Min San", "12.3.2014");
+       orderlist.add(order3);
+      
        
         while ( choice !=14){
        try {
@@ -64,7 +72,15 @@ public class Menus {
                 
                
                  break;
-               case 2:
+               case 2: menuQuestion = new String[]{
+                   "1. Make Order",
+                   "2. Delete Order",
+                   "3. List All Ordres",
+                   "4. Search Orders"
+               };
+               OrderManager orderManager = new OrderManager(orderlist);
+                this.make(orderManager,menuQuestion);
+               
                    break;
            }
            

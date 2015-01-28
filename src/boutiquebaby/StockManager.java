@@ -26,13 +26,14 @@ public class StockManager implements Manager {
     Scanner menuScanner  = new Scanner(System.in);
     @Override
     public void add(){
-       Stock myStock = new Stock();
+       Stock stock = new Stock();
        out.println("Enter Stock ID");
-       myStock.setID(menuScanner.nextInt());
+       stock.setID(menuScanner.nextInt());
        int id  = menuScanner.nextInt();
        out.println("Enter Stock Manufacture");
-       myStock.setManufacture(menuScanner.next());
-       stocklist.add(myStock);
+       stock.setManufacture(menuScanner.next());
+       stocklist.add(stock);
+       this.showAllItems(stock);
        
         
     
@@ -57,14 +58,7 @@ public class StockManager implements Manager {
             
             out.println("---------");
             Stock stock = stocklist.getById(i);
-            out.println("ID:" + stock.getId() );
-            out.println("Manufacture:" + stock.getManfacture());
-            out.println("Size:" + stock.getSize());
-            out.println("Color:" + stock.getColor());
-            out.println("Description:" + stock.getDescription());
-            out.println("Meterial:" + stock.getMaterial());
-            out.println("Retail Price:" + stock.getRetailPrice());
-            out.println();
+            this.showAllItems(stock);
         }
         
         pressEnterContinue();
@@ -88,6 +82,17 @@ public class StockManager implements Manager {
         if(myScanner.hasNextLine()){
             return;
         }
+   }
+   
+     protected void showAllItems(Stock stock){
+        out.println("ID:" + stock.getId() );
+            out.println("Manufacture:" + stock.getManfacture());
+            out.println("Size:" + stock.getSize());
+            out.println("Color:" + stock.getColor());
+            out.println("Description:" + stock.getDescription());
+            out.println("Meterial:" + stock.getMaterial());
+            out.println("Retail Price:" + stock.getRetailPrice());
+            out.println();
    }
 }
 
