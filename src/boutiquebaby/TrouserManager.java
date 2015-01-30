@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author xikang
  */
-public class TrouserManager implements StockManagerInterface{
+public class TrouserManager{
     
     public static Trouser add(){
        Scanner menuScanner = new Scanner(System.in); 

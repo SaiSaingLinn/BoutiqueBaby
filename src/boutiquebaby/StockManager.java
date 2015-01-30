@@ -36,6 +36,10 @@ public class StockManager implements Manager {
                
                stocklist.add(TrouserManager.add());
                break;
+           case 2:
+               
+               stocklist.add(footwearManager.add());
+               break;
                
        }
        
@@ -73,8 +77,7 @@ public class StockManager implements Manager {
         
         out.println("Enter the Stock ID you want to search");
         Stock stock = stocklist.getById(menuScanner.nextInt());
-        out.println(stock.getId());
-        out.println(stock.getManfacture());
+        stock.showAllItems();
         pressEnterContinue();
        
         
