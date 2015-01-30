@@ -62,27 +62,3 @@ public class MenuBuilder {
 }
     
   
-
-
-/*
- switch(choice){
-                       case 1:
-                           Stock stock = new Stock();
-                           System.out.println("Enter Stock ID");
-                           stock.setId(Integer.parseInt(input.readLine()));
-                           System.out.println("Enter Name");
-                           stock.setManufacture(input.readLine());
-                           stocklist.add(stock);
-                           Stock sock1 = stocklist.getById(0);
-                            
-                            break;
-                       case 2:
-                           System.out.println("Enter Stock id you want to delete");
-                           stocklist.deletById(Integer.parseInt(input.readLine()));
-                           try{
-                                System.out.println("Remove Sucessful");
-                           }catch(Exception e){
-                               System.out.println(e.getMessage()+"Delete doesn't sucessful");
-                           }
-                   }
-*/

@@ -11,37 +11,34 @@ import java.util.ArrayList;
  *
  * @author xikang
  */
-public class SupplierList {
+public class CustomerList {
     
-      protected ArrayList<Supplier> supplierList;
+     protected ArrayList<Customer> customerList;
     
-    public SupplierList(){
+    public CustomerList(){
       
-        supplierList = new ArrayList<>();
+        customerList = new ArrayList<>();
     }
     
-    public void add(Supplier supplier){
+    public void add(Customer customer){
         
-        supplierList.add(supplier);
+        customerList.add(customer);
     }
     
     public void deletById(int id){
         
-        supplierList.remove(id);
+        customerList.remove(id);
     }
     
     public int getSize(){
         
-       return  supplierList.size();
+       return  customerList.size();
        
     }
     
-    public Supplier getById(int id){
+    public Customer getById(int id){
         
-        return supplierList.get(id);
+        return customerList.get(id);
     }
-    
-    
-    
     
 }

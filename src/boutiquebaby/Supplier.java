@@ -20,6 +20,9 @@ public class Supplier {
         this.name = name;
         this.Address = Address;
     }
+    public Supplier(){
+        
+    }
 
     public void setSupplierId(int supplierId) {
         this.supplierId = supplierId;

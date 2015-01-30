@@ -26,6 +26,8 @@ public class Menus {
        stocklist.add(stock2);
        Stock stock3 = new Stock(1, "Opanet", "XXL", "RED", "Wearble", "Durable", 123);
        stocklist.add(stock3);
+       Trouser trouser= new Trouser(12, 13, 12, "Opanet", "XXL", "RED", "Wearble", "Durable", 123);
+       stocklist.add(trouser);
        out.println(stocklist.getById(1).getManfacture());
        OrderList orderlist = new OrderList();
        Order order1 = new Order(1, 2, "Min San", "12.3.2014");
@@ -34,6 +36,21 @@ public class Menus {
        orderlist.add(order2);
        Order order3 = new Order(1, 2, "Min San", "12.3.2014");
        orderlist.add(order3);
+       SupplierList supplierlist = new SupplierList();
+       Supplier supplier1 = new Supplier(1, "DigitalOcan", "San Fan Raod");
+       supplierlist.add(supplier1);
+       Supplier supplier2 = new Supplier(2, "BabyOcan", "Fankanm Raod");
+       supplierlist.add(supplier2);
+       Supplier supplier3 = new Supplier(3, "GiantBaby", "JARDAN Raod");
+       supplierlist.add(supplier3);
+       CustomerList customerlist = new CustomerList();
+       Customer customer1 = new Customer(1, "Mag Mag", "Kanhan Road", "123132", 123123123, "min@gamilcom");
+       customerlist.add(customer1);
+       Customer customer2 = new Customer(1, "Mag Mag", "Kanhan Road", "123132", 123123123, "min@gamilcom");
+       customerlist.add(customer2);
+       Customer customer3 = new Customer(1, "Mag Mag", "Kanhan Road", "123132", 123123123, "min@gamilcom");
+       customerlist.add(customer3);
+       
       
        
         while ( choice !=14){
@@ -72,16 +89,37 @@ public class Menus {
                 
                
                  break;
-               case 2: menuQuestion = new String[]{
-                   "1. Make Order",
-                   "2. Delete Order",
-                   "3. List All Ordres",
-                   "4. Search Orders"
-               };
-               OrderManager orderManager = new OrderManager(orderlist);
-                this.make(orderManager,menuQuestion);
+               case 2: 
+                   menuQuestion = new String[]{
+                    "1. Make Order",
+                    "2. Delete Order",
+                    "3. List All Ordres",
+                    "4. Search Orders"
+                    };
+                    OrderManager orderManager = new OrderManager(orderlist);
+                    this.make(orderManager,menuQuestion);
                
                    break;
+               case 3:
+                   menuQuestion = new String[]{
+                    "1. Name supplier",
+                    "2. Delete supplier",
+                    "3. List All suppliers",
+                    "4. Search supplier"
+                    };
+                   SupplierManager suppliermanager = new SupplierManager(supplierlist);
+                   this.make(suppliermanager, menuQuestion);
+                   break;
+               case 4:
+                   menuQuestion = new String[]{
+                    "1. Add Customer",
+                    "2. Delete Customer",
+                    "3. List All Customer",
+                    "4. Search Customer"
+                    };
+                   CustomerManager customermanager = new CustomerManager(customerlist);
+                   this.make(customermanager, menuQuestion);
+                   
            }
            
        } catch (Exception e) {

@@ -26,6 +26,7 @@ public class StockManager implements Manager {
     Scanner menuScanner  = new Scanner(System.in);
     @Override
     public void add(){
+        
        Stock stock = new Stock();
        out.println("Enter Stock ID");
        stock.setID(menuScanner.nextInt());
