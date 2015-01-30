@@ -5,6 +5,8 @@
  */
 package boutiquebaby;
 
+import static java.lang.System.out;
+
 /**
  *
  * @author xikang
@@ -101,4 +103,15 @@ public class Stock {
         return this.retailPrice;
     }
     
+    protected void showAllItems(){
+        
+        out.println("ID:" + this.getId() );
+            out.println("Manufacture:" + this.getManfacture());
+            out.println("Size:" + this.getSize());
+            out.println("Color:" + this.getColor());
+            out.println("Description:" + this.getDescription());
+            out.println("Meterial:" + this.getMaterial());
+            out.println("Retail Price:" + this.getRetailPrice());
+            out.println();
+   }
 }

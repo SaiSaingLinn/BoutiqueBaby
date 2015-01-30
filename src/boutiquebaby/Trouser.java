@@ -5,6 +5,8 @@
  */
 package boutiquebaby;
 
+import static java.lang.System.out;
+
 /**
  *
  * @author xikang
@@ -20,10 +22,11 @@ public class Trouser extends Stock{
         this.waist = waist;
     }
 
-    public Trouser(int length, int waist) {
-        this.length = length;
-        this.waist = waist;
+    public Trouser() {
+        
     }
+    
+
 
     public int getLength() {
         return length;
@@ -41,7 +44,18 @@ public class Trouser extends Stock{
         this.waist = waist;
     }
     
-    
+    protected void showAllItems(){
+        out.println("ID:" + this.getId() );
+            out.println("Manufacture:" + this.getManfacture());
+            out.println("Size:" + this.getSize());
+            out.println("Color:" + this.getColor());
+            out.println("Description:" + this.getDescription());
+            out.println("Meterial:" + this.getMaterial());
+            out.println("Retail Price:" + this.getRetailPrice());
+            out.println("Waist: " + this.getWaist());
+            out.println("Lenght: " + this.getLength());
+            out.println();
+   }
 
   
 }

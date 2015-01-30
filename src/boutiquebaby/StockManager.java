@@ -27,14 +27,17 @@ public class StockManager implements Manager {
     @Override
     public void add(){
         
-       Stock stock = new Stock();
-       out.println("Enter Stock ID");
-       stock.setID(menuScanner.nextInt());
-       int id  = menuScanner.nextInt();
-       out.println("Enter Stock Manufacture");
-       stock.setManufacture(menuScanner.next());
-       stocklist.add(stock);
-       this.showAllItems(stock);
+       out.print("Which Stock you want to added");
+       int choice = menuScanner.nextInt();
+       StockManagerInterface stockmanager;
+       switch(choice){
+           
+           case 1:
+               
+               stocklist.add(TrouserManager.add());
+               break;
+               
+       }
        
         
     
@@ -59,7 +62,8 @@ public class StockManager implements Manager {
             
             out.println("---------");
             Stock stock = stocklist.getById(i);
-            this.showAllItems(stock);
+            stock.showAllItems();
+            
         }
         
         pressEnterContinue();
@@ -85,16 +89,9 @@ public class StockManager implements Manager {
         }
    }
    
-     protected void showAllItems(Stock stock){
-        out.println("ID:" + stock.getId() );
-            out.println("Manufacture:" + stock.getManfacture());
-            out.println("Size:" + stock.getSize());
-            out.println("Color:" + stock.getColor());
-            out.println("Description:" + stock.getDescription());
-            out.println("Meterial:" + stock.getMaterial());
-            out.println("Retail Price:" + stock.getRetailPrice());
-            out.println();
-   }
+     
+     
+     
 }
 
 
